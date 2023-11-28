@@ -4,3 +4,39 @@ body,html{
     margin: 0;
     background: #fff;
 }
+
+.box_wrap{
+    border-radius: 20px;
+    padding: 10px;
+    background: #E2E2E2;
+}
+
+.box_cover{
+    max-height: 200px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.box_info{
+    padding-top: 10px;
+}
+.box_info_right{
+    display: flex;
+    justify-content: end;
+}
+.box_info_avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+.box_info_wrap{
+    display: flex;
+    flex-direction: column;
+}
+.box_info_wrap h3{
+    font-weight: bold;
+    font-size: 24px;
+}
+.box_info_wrap small{
+    color: #6B6B6B;
+    font-size: 14px;
+}

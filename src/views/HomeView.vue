@@ -2,12 +2,71 @@
   import TopNav from '@/components/TopNav.vue'
   import { ref } from 'vue';
   const current = ref(2);
+  let recommend_data_list = [
+    {
+      "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+      "title": "巴塞罗纳出租屋",
+      "sub_title": ["哥德堡","维修","免费"],
+      "user":{
+        "username":"呵呵呵呵",
+        "avatar":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+      }
+    },
+    {
+      "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+      "title": "巴塞罗纳出租屋",
+      "sub_title": ["哥德堡","维修","免费"],
+      "user":{
+        "username":"呵呵呵呵",
+        "avatar":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+      }
+    },
+    {
+      "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+      "title": "巴塞罗纳出租屋",
+      "sub_title": ["哥德堡","维修","免费"],
+      "user":{
+        "username":"呵呵呵呵",
+        "avatar":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+      }
+    },
+    {
+      "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+      "title": "巴塞罗纳出租屋",
+      "sub_title": ["哥德堡","维修","免费"],
+      "user":{
+        "username":"呵呵呵呵",
+        "avatar":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+      }
+    },
+    {
+      "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+      "title": "巴塞罗纳出租屋",
+      "sub_title": ["哥德堡","维修","免费"],
+      "user":{
+        "username":"呵呵呵呵",
+        "avatar":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+      }
+    },
+    {
+      "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+      "title": "巴塞罗纳出租屋",
+      "sub_title": ["哥德堡","维修","免费"],
+      "user":{
+        "username":"呵呵呵呵",
+        "avatar":"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+      }
+    }
+  ]
+  function getSubTitle(sub_title_list){
+    return sub_title_list.join(" - ")
+  }
 </script>
 
 <template>
   <main>
     <div id='page_warp'>
-      <TopNav />
+      <TopNav banner-text='万物皆可换' :show-banner='true'/>
       <div class='content_wrap'>
         <div class='index_tag_warp'>
           <div class='index_tag'><a href='#'><img src='@/assets/index/tag_1.png' alt=''></a></div>
@@ -20,249 +79,24 @@
         <hr style='margin-top: 10px;margin-bottom: 10px'/>
         <h2 style='font-weight: bold'>推荐</h2>
         <a-row class='recommend_list' :gutter="16">
-          <a-col :span="8" class='recommend_item gutter-row'>
+          <a-col :span="8" class='recommend_item gutter-row'  v-for='recommend_data in recommend_data_list'>
             <div class='gutter-box'>
               <div class='box_wrap'>
                 <div class='box_cover'>
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+                  <img :src="recommend_data.cover" />
                 </div>
                 <div class='box_info'>
                   <a-row>
                     <a-col :span="16">
                       <div class='box_info_wrap'>
-                        <h3>巴塞罗纳出租屋</h3>
-                        <small>哥德堡 - 维修 - 免费</small>
+                        <h3>{{recommend_data.title}}</h3>
+                        <small>{{getSubTitle(recommend_data.sub_title)}}</small>
                       </div>
                     </a-col>
                     <a-col :span="8" class='box_info_right'>
                       <div class='box_info_wrap'>
-                        <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' class='box_info_avatar'>
-                        <div class='box_info_user'>呵呵呵呵</div>
-                      </div>
-                    </a-col>
-                  </a-row>
-                </div>
-              </div>
-            </div>
-          </a-col>
-          <a-col :span="8" class='recommend_item gutter-row'>
-            <div class='gutter-box'>
-              <div class='box_wrap'>
-                <div class='box_cover'>
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                </div>
-                <div class='box_info'>
-                  <a-row>
-                    <a-col :span="16">
-                      <div class='box_info_wrap'>
-                        <h3>巴塞罗纳出租屋</h3>
-                        <small>哥德堡 - 维修 - 免费</small>
-                      </div>
-                    </a-col>
-                    <a-col :span="8" class='box_info_right'>
-                      <div class='box_info_wrap'>
-                        <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' class='box_info_avatar'>
-                        <div class='box_info_user'>呵呵呵呵</div>
-                      </div>
-                    </a-col>
-                  </a-row>
-                </div>
-              </div>
-            </div>
-          </a-col>
-          <a-col :span="8" class='recommend_item gutter-row'>
-            <div class='gutter-box'>
-              <div class='box_wrap'>
-                <div class='box_cover'>
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                </div>
-                <div class='box_info'>
-                  <a-row>
-                    <a-col :span="16">
-                      <div class='box_info_wrap'>
-                        <h3>巴塞罗纳出租屋</h3>
-                        <small>哥德堡 - 维修 - 免费</small>
-                      </div>
-                    </a-col>
-                    <a-col :span="8" class='box_info_right'>
-                      <div class='box_info_wrap'>
-                        <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' class='box_info_avatar'>
-                        <div class='box_info_user'>呵呵呵呵</div>
-                      </div>
-                    </a-col>
-                  </a-row>
-                </div>
-              </div>
-            </div>
-          </a-col>
-          <a-col :span="8" class='recommend_item gutter-row'>
-            <div class='gutter-box'>
-              <div class='box_wrap'>
-                <div class='box_cover'>
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                </div>
-                <div class='box_info'>
-                  <a-row>
-                    <a-col :span="16">
-                      <div class='box_info_wrap'>
-                        <h3>巴塞罗纳出租屋</h3>
-                        <small>哥德堡 - 维修 - 免费</small>
-                      </div>
-                    </a-col>
-                    <a-col :span="8" class='box_info_right'>
-                      <div class='box_info_wrap'>
-                        <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' class='box_info_avatar'>
-                        <div class='box_info_user'>呵呵呵呵</div>
-                      </div>
-                    </a-col>
-                  </a-row>
-                </div>
-              </div>
-            </div>
-          </a-col>
-          <a-col :span="8" class='recommend_item gutter-row'>
-            <div class='gutter-box'>
-              <div class='box_wrap'>
-                <div class='box_cover'>
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                </div>
-                <div class='box_info'>
-                  <a-row>
-                    <a-col :span="16">
-                      <div class='box_info_wrap'>
-                        <h3>巴塞罗纳出租屋</h3>
-                        <small>哥德堡 - 维修 - 免费</small>
-                      </div>
-                    </a-col>
-                    <a-col :span="8" class='box_info_right'>
-                      <div class='box_info_wrap'>
-                        <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' class='box_info_avatar'>
-                        <div class='box_info_user'>呵呵呵呵</div>
-                      </div>
-                    </a-col>
-                  </a-row>
-                </div>
-              </div>
-            </div>
-          </a-col>
-          <a-col :span="8" class='recommend_item gutter-row'>
-            <div class='gutter-box'>
-              <div class='box_wrap'>
-                <div class='box_cover'>
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                </div>
-                <div class='box_info'>
-                  <a-row>
-                    <a-col :span="16">
-                      <div class='box_info_wrap'>
-                        <h3>巴塞罗纳出租屋</h3>
-                        <small>哥德堡 - 维修 - 免费</small>
-                      </div>
-                    </a-col>
-                    <a-col :span="8" class='box_info_right'>
-                      <div class='box_info_wrap'>
-                        <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' class='box_info_avatar'>
-                        <div class='box_info_user'>呵呵呵呵</div>
-                      </div>
-                    </a-col>
-                  </a-row>
-                </div>
-              </div>
-            </div>
-          </a-col>
-          <a-col :span="8" class='recommend_item gutter-row'>
-            <div class='gutter-box'>
-              <div class='box_wrap'>
-                <div class='box_cover'>
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                </div>
-                <div class='box_info'>
-                  <a-row>
-                    <a-col :span="16">
-                      <div class='box_info_wrap'>
-                        <h3>巴塞罗纳出租屋</h3>
-                        <small>哥德堡 - 维修 - 免费</small>
-                      </div>
-                    </a-col>
-                    <a-col :span="8" class='box_info_right'>
-                      <div class='box_info_wrap'>
-                        <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' class='box_info_avatar'>
-                        <div class='box_info_user'>呵呵呵呵</div>
-                      </div>
-                    </a-col>
-                  </a-row>
-                </div>
-              </div>
-            </div>
-          </a-col>
-          <a-col :span="8" class='recommend_item gutter-row'>
-            <div class='gutter-box'>
-              <div class='box_wrap'>
-                <div class='box_cover'>
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                </div>
-                <div class='box_info'>
-                  <a-row>
-                    <a-col :span="16">
-                      <div class='box_info_wrap'>
-                        <h3>巴塞罗纳出租屋</h3>
-                        <small>哥德堡 - 维修 - 免费</small>
-                      </div>
-                    </a-col>
-                    <a-col :span="8" class='box_info_right'>
-                      <div class='box_info_wrap'>
-                        <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' class='box_info_avatar'>
-                        <div class='box_info_user'>呵呵呵呵</div>
-                      </div>
-                    </a-col>
-                  </a-row>
-                </div>
-              </div>
-            </div>
-          </a-col>
-          <a-col :span="8" class='recommend_item gutter-row'>
-            <div class='gutter-box'>
-              <div class='box_wrap'>
-                <div class='box_cover'>
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                </div>
-                <div class='box_info'>
-                  <a-row>
-                    <a-col :span="16">
-                      <div class='box_info_wrap'>
-                        <h3>巴塞罗纳出租屋</h3>
-                        <small>哥德堡 - 维修 - 免费</small>
-                      </div>
-                    </a-col>
-                    <a-col :span="8" class='box_info_right'>
-                      <div class='box_info_wrap'>
-                        <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' class='box_info_avatar'>
-                        <div class='box_info_user'>呵呵呵呵</div>
-                      </div>
-                    </a-col>
-                  </a-row>
-                </div>
-              </div>
-            </div>
-          </a-col>
-          <a-col :span="8" class='recommend_item gutter-row'>
-            <div class='gutter-box'>
-              <div class='box_wrap'>
-                <div class='box_cover'>
-                  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                </div>
-                <div class='box_info'>
-                  <a-row>
-                    <a-col :span="16">
-                      <div class='box_info_wrap'>
-                        <h3>巴塞罗纳出租屋</h3>
-                        <small>哥德堡 - 维修 - 免费</small>
-                      </div>
-                    </a-col>
-                    <a-col :span="8" class='box_info_right'>
-                      <div class='box_info_wrap'>
-                        <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' class='box_info_avatar'>
-                        <div class='box_info_user'>呵呵呵呵</div>
+                        <img :src='recommend_data.user.avatar' class='box_info_avatar'>
+                        <div class='box_info_user'>{{recommend_data.user.username}}</div>
                       </div>
                     </a-col>
                   </a-row>

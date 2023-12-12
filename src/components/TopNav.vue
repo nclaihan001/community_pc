@@ -1,13 +1,25 @@
 <script setup>
 import { CaretDownFilled,StarFilled,UploadOutlined,DownloadOutlined } from '@ant-design/icons-vue';
+import {defineProps} from 'vue'
 const onClick = function(key){
     console.log(key)
 }
+
+defineProps({
+  showBanner:{
+    type: Boolean,
+    required: true
+  },
+  bannerText:{
+    type: String,
+    required: true
+  }
+})
 </script>
 <template>
   <a-row class='top_nav'>
     <a-col :span="8" class='top_nav_left'>
-      <h1>换卟岛</h1>
+      <router-link to='/'><h1>换卟岛</h1></router-link>
       <a-dropdown>
         <a class="ant-dropdown-link" @click.prevent>
           全部
@@ -30,7 +42,7 @@ const onClick = function(key){
       <span><a href='/collect'><UploadOutlined />已发出</a></span>
       <span><a href='/collect'><DownloadOutlined />已收到</a></span>
 <!--      <span><a href='/collect'><StarFilled />用户123123</a></span>-->
-      <span><a-button type="primary">发布房源</a-button></span>
+      <span><a-button @click="$router.push('/post_home')" type="primary">发布房源</a-button></span>
     </a-col>
   </a-row>
   <a-row class='top_nav_links'>
@@ -47,13 +59,22 @@ const onClick = function(key){
         <a href='/'>FAQ</a>
     </a-col>
   </a-row>
-  <div class='top_nav_banner'>
+  <div v-show='showBanner' class='top_nav_banner'>
     <img src='../assets/index/banner.png' style='width: 100%' alt=''>
+    <div class='top_nav_banner_text'>{{bannerText}}</div>
   </div>
 </template>
 <style scoped>
     .top_nav_banner{
       width: 100%;
+      position: relative;
+    }
+    .top_nav_banner_text{
+      position: absolute;
+      left: 100px;
+      bottom: 50px;
+      color: #fff;
+      font-size: 32px;
     }
     .top_nav_links{
       background: #6B6B6B;
@@ -75,6 +96,7 @@ const onClick = function(key){
       font-size: 18px;
       display: inline;
       margin: 0 20px 0 0;
+      color: #E2E2E2;
     }
     .top_nav_left{
       display: flex;

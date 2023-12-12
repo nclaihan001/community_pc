@@ -48,12 +48,12 @@ defineProps({
   <a-row class='top_nav_links'>
     <a-col :span="16" class='top_nav_links_left'>
       <a href='/'>换卟</a>
-      <a href='/'>推荐</a>
-      <a href='/'>找搭子</a>
-      <a href='/'>日常分享</a>
-      <a href='/'>二手换物</a>
-      <a href='/'>探店分享</a>
-      <a href='/'>技能交换</a>
+      <a href='/square/1/1'>推荐</a>
+      <a href='/square/2/1'>找搭子</a>
+      <a href='/square/3/1'>日常分享</a>
+      <a href='/square/4/1'>二手换物</a>
+      <a href='/square/5/1'>探店分享</a>
+      <a href='/square/6/1'>技能交换</a>
     </a-col>
     <a-col :span="8" class='top_nav_links_right'>
         <a href='/'>FAQ</a>

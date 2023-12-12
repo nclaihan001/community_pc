@@ -4,6 +4,7 @@
   const current = ref(2);
   let recommend_data_list = [
     {
+      "id":"1",
       "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
       "title": "巴塞罗纳出租屋",
       "sub_title": ["哥德堡","维修","免费"],
@@ -13,6 +14,7 @@
       }
     },
     {
+      "id":"2",
       "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
       "title": "巴塞罗纳出租屋",
       "sub_title": ["哥德堡","维修","免费"],
@@ -22,6 +24,7 @@
       }
     },
     {
+      "id":"3",
       "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
       "title": "巴塞罗纳出租屋",
       "sub_title": ["哥德堡","维修","免费"],
@@ -31,6 +34,7 @@
       }
     },
     {
+      "id":"4",
       "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
       "title": "巴塞罗纳出租屋",
       "sub_title": ["哥德堡","维修","免费"],
@@ -40,6 +44,7 @@
       }
     },
     {
+      "id":"5",
       "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
       "title": "巴塞罗纳出租屋",
       "sub_title": ["哥德堡","维修","免费"],
@@ -49,6 +54,7 @@
       }
     },
     {
+      "id":"6",
       "cover": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
       "title": "巴塞罗纳出租屋",
       "sub_title": ["哥德堡","维修","免费"],
@@ -79,8 +85,8 @@
         <hr style='margin-top: 10px;margin-bottom: 10px'/>
         <h2 style='font-weight: bold'>推荐</h2>
         <a-row class='recommend_list' :gutter="16">
-          <a-col :span="8" class='recommend_item gutter-row'  v-for='recommend_data in recommend_data_list'>
-            <div class='gutter-box'>
+          <a-col :span="8" class='recommend_item gutter-row'  v-for='recommend_data in recommend_data_list' :key="recommend_data.id">
+            <div class='gutter-box' @click="$router.push('/home/detail/'+recommend_data.id)">
               <div class='box_wrap'>
                 <div class='box_cover'>
                   <img :src="recommend_data.cover" />

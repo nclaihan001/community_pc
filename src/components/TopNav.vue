@@ -42,7 +42,7 @@ defineProps({
       <span><a href='/collect'><UploadOutlined />已发出</a></span>
       <span><a href='/collect'><DownloadOutlined />已收到</a></span>
 <!--      <span><a href='/collect'><StarFilled />用户123123</a></span>-->
-      <span><a-button @click="$router.push('/post_home')" type="primary">发布房源</a-button></span>
+      <span><a-button @click="$router.push('/home/post')" type="primary">发布房源</a-button></span>
     </a-col>
   </a-row>
   <a-row class='top_nav_links'>
